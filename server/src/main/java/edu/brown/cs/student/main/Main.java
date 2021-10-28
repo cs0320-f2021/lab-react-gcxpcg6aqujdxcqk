@@ -125,6 +125,7 @@ public final class Main {
   private static class RouteHandler implements Route {
     @Override
     public Object handle(Request request, Response response) throws Exception {
+      System.out.println("test");
 
       JSONObject data = new JSONObject(request.body());
       double sLat = data.getDouble("srclat");
@@ -143,6 +144,7 @@ public final class Main {
       coordinates.add(rand2);
 
       Map<String, Object> variables = ImmutableMap.of("route", coordinates);
+      System.out.println("testRoute");
       return GSON.toJson(variables);
 
     }
